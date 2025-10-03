@@ -57,3 +57,18 @@ AMI used: ami-0fb653ca2d3203ac1
 Key pair name: logan-key (stored safely in ~/.ssh/logan-key.pem, not committed to git)
 
 Billing caution: destroy resources when idle to avoid charges
+
+## Quick Start for Future Logan 🐺
+
+Recreate and connect in 3 steps:
+
+```bash
+# 1. Go to terraform folder
+cd ~/projects/vpn-terraform-k8s/terraform
+
+# 2. Re-init & apply infra
+terraform init
+terraform apply
+
+# 3. SSH into your VPN server
+ssh -i ~/.ssh/logan-key.pem ubuntu@$(terraform output -raw vpn_server_ip)
