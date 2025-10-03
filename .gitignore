@@ -5,6 +5,9 @@
 *.tfstate
 *.tfstate.*
 
+# Ignore tfplan binary output files
+*.tfplan
+
 # Crash log files
 crash.log
 crash.*.log
